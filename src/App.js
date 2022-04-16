@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import Booth from './components/Booth';
+import Banner from './components/Banner';
+import SearchBar from './components/SearchBar';
+import Header from './components/Header';
+import Menu from './components/Menu';
+import { data } from './data';
 
 function App() {
+  let name = 'Finsen';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header className='header'>
+        <Header name={name} />
       </header>
+
+      <main className='main'>
+        <div className='filter-container'>
+          <SearchBar />
+          <Menu />
+        </div>
+
+        <div className='banner-container'>
+          <Banner 
+            title='NECDC Physical Career Fair'
+            subTitle='@ Our Tampines Hub'
+          />
+        </div>
+
+        <div className='booth-container'>
+          <div className='booths'>
+            {data.map((item, index) => 
+             <Booth item={item} key={index} />
+            )}
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

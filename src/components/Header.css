@@ -1,0 +1,27 @@
+.header-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  margin-right: 12px;
+}
